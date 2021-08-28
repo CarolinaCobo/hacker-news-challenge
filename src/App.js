@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function App() {
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const getData = async () => {
@@ -10,7 +11,13 @@ export default function App() {
       );
       const jsonData = await res.json();
 
-      const currentPosts = jsonData.slice(0, 10);
+      const pageSize = 10;
+      const endOfPageNum = currentPage * pageSize;
+      const currentPosts = jsonData.slice(
+        endOfPageNum - pageSize,
+        endOfPageNum
+      );
+
       const posts = await Promise.all(
         currentPosts.map(async (id) => {
           const res = await fetch(
@@ -26,6 +33,14 @@ export default function App() {
 
     getData();
   }, []);
+
+  const handlePrev = () => {
+    if (currentPage === 1) return;
+    setCurrentPage(currentPage - 1);
+  };
+  const handleNext = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
   return <div className="App"></div>;
 }
