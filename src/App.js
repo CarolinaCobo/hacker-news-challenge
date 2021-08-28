@@ -32,8 +32,9 @@ export default function App() {
     };
 
     getData();
-  }, []);
+  }, [currentPage]);
 
+  //   Pagination
   const handlePrev = () => {
     if (currentPage === 1) return;
     setCurrentPage(currentPage - 1);
@@ -42,5 +43,13 @@ export default function App() {
     setCurrentPage(currentPage + 1);
   };
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <div>
+        <div>Page {currentPage} </div>
+        <button onClick={handlePrev}>Previous</button>
+        <button onClick={handleNext}>Next</button>
+      </div>
+    </div>
+  );
 }
