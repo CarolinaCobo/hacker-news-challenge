@@ -61,10 +61,3 @@ export default function App() {
     </div>
   );
 }
-
-render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-  document.getElementById("root")
-);
