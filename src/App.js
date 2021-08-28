@@ -4,12 +4,13 @@ export default function App() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("topstories");
 
   // Fetch API to get all the ID numbers of the top stories
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
-        "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"
+        `https://hacker-news.firebaseio.com/v0/${filter}.json?print=pretty`
       );
       const jsonData = await res.json();
 
@@ -35,7 +36,7 @@ export default function App() {
     };
 
     getData();
-  }, [currentPage]);
+  }, [currentPage, filter]);
 
   //   Pagination
   const handlePrev = () => {
@@ -44,6 +45,12 @@ export default function App() {
   };
   const handleNext = () => {
     setCurrentPage(currentPage + 1);
+  };
+
+  //   Filtering by Top, New and Best stories
+  const handleFilterChange = (filterName) => {
+    setFilter(filterName);
+    setCurrentPage(1);
   };
 
   return (
@@ -57,6 +64,19 @@ export default function App() {
         <div>Page {currentPage} </div>
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
+      </div>
+
+      <div>
+        <div>Filter by</div>
+        <button onClick={() => handleFilterChange("topstories")}>
+          Top Stories
+        </button>
+        <button onClick={() => handleFilterChange("newstories")}>
+          New Stories
+        </button>
+        <button onClick={() => handleFilterChange("beststories")}>
+          Best Stories
+        </button>
       </div>
     </div>
   );
