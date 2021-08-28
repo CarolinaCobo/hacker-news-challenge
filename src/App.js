@@ -66,7 +66,7 @@ export default function App() {
         <button onClick={handleNext}>Next</button>
       </div>
 
-      <div>
+      {/* <div>
         <div>Filter by</div>
         <button onClick={() => handleFilterChange("topstories")}>
           Top Stories
@@ -77,6 +77,22 @@ export default function App() {
         <button onClick={() => handleFilterChange("beststories")}>
           Best Stories
         </button>
+      </div> */}
+
+      <div>
+        <label htmlFor="filter">
+          Sort by:
+          <select
+            id="filter"
+            value={filter}
+            onChange={(e) => handleFilterChange(e.target.value)}
+            onBlur={(e) => handleFilterChange(e.target.value)}
+          >
+            <option value="topstories">Top Stories</option>
+            <option value="newstories">New Stories</option>
+            <option value="beststories">Best Stories</option>
+          </select>
+        </label>
       </div>
     </div>
   );
