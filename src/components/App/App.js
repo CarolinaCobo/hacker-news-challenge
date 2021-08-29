@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Button from "../Button/Button";
 import WidthContainer from "../WidthContainer/WidthContainer";
+import Posts from "../Posts/Posts";
 
 function App() {
   const [data, setData] = useState([]);
@@ -92,9 +93,7 @@ function App() {
       </div>
       <WidthContainer>
         {loading ? <div>Loading</div> : null}
-        {loading === false
-          ? data.map((post) => <div key={post.id}>{post.title}</div>)
-          : null}
+        {loading === false ? <Posts postsData={data} /> : null}
       </WidthContainer>
       <WidthContainer>
         <div>
