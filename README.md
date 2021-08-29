@@ -12,8 +12,6 @@ ESlint
 
 Create and improved version of (Hacker News)[https://news.ycombinator.com/] using the resources from their (API)[https://github.com/HackerNews/API]
 
----
-
 ## Table of contents
 
 1.[UX](#ux)
@@ -27,21 +25,10 @@ Create and improved version of (Hacker News)[https://news.ycombinator.com/] usin
 
     2.[Features](#features)
 
-- [CRUD Operations](#CRUD-operations)
-- [Database design](#database-design)
 - [Site features](#site-features)
+
   - [Responsive Frontend design](#responsive-frontend-design)
-  - [Backend design](#backend-design)
-  - [Website topology](#website-topology)
-  - [Structure](#Structure)
-  - [Home Page](#Home-page)
-  - [All Books Page](#all-books-page)
-  - [Book Page](#book-page)
-  - [Profile Page](#Profile-page)
-  - [Add Book Page](#add-book-page)
-  - [Edit Book Page](#edit-book-page)
-  - [Manage genre Page](#manage-genre-page)
-  - [Buttons and other elements used](#buttons-and-other-elements-used)
+
 - [Future features](#future-features)
 
   3.[Technologies used](#technologies-used)
@@ -55,12 +42,10 @@ Create and improved version of (Hacker News)[https://news.ycombinator.com/] usin
   5.[Deployment](#deployment)
 
 - [Cloning](#cloning)
-- [Deploying app to Heroku](#Deploying-app-to-Heroku)
 
   6.[Credits](#credits)
 
 - [Content](#content)
-- [Media](#media)
 
   7.[Acknowledgements](#acknowledgements)
 
@@ -76,7 +61,7 @@ Create and improved version of (Hacker News)[https://news.ycombinator.com/] usin
 
 For styling the page I followed the redesign made by (Alberto Costestabili)[https://dribbble.com/shots/3219317-Hacker-News-Redesign] with some changes.
 
-I picked this design as it follows the original site but making the UI friendlier and easier to read.
+I picked this design as it follows the original site but with a much more friendlier UI.
 
 ### Colours
 
@@ -127,3 +112,13 @@ I considered to add the earch option, but doing some research on the Hacker News
 - [Parcel](https://parceljs.org/) - Web application bundler.
 - [Google Fonts](https://fonts.google.com) - used for fonts on the site.
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to test and optimize the site.
+
+<h1> 4. Testing </h1>
+
+The test performed can be found at the [testing.md](testing.md) file.
+
+---
+
+<h1> 5. Deployment </h1>
+
+https://meyerweb.com/eric/tools/css/reset/ - Reset CSS in the app to avoid inconsistencies on the page.
