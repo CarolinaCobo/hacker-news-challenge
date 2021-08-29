@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import "./App.css";
+import Button from "../Button/Button";
 
-export default function App() {
+function App() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -55,6 +57,27 @@ export default function App() {
 
   return (
     <div className="App">
+      <div>
+        <Button
+          active={filter === "topstories" ? true : false}
+          onClick={() => handleFilterChange("topstories")}
+        >
+          Top Stories
+        </Button>
+        <Button
+          active={filter === "newstories" ? true : false}
+          onClick={() => handleFilterChange("newstories")}
+        >
+          New Stories
+        </Button>
+        <Button
+          active={filter === "beststories" ? true : false}
+          onClick={() => handleFilterChange("beststories")}
+        >
+          Best Stories
+        </Button>
+      </div>
+
       {loading ? <div>Loading</div> : null}
       {loading === false
         ? data.map((post) => <div key={post.id}>{post.title}</div>)
@@ -62,24 +85,20 @@ export default function App() {
 
       <div>
         <div>Page {currentPage} </div>
-        <button onClick={handlePrev}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+        <Button
+          active
+          large
+          disabled={currentPage === 1 ? true : false}
+          onClick={handlePrev}
+        >
+          Previous
+        </Button>
+        <Button large active onClick={handleNext}>
+          Next
+        </Button>
       </div>
 
       {/* <div>
-        <div>Filter by</div>
-        <button onClick={() => handleFilterChange("topstories")}>
-          Top Stories
-        </button>
-        <button onClick={() => handleFilterChange("newstories")}>
-          New Stories
-        </button>
-        <button onClick={() => handleFilterChange("beststories")}>
-          Best Stories
-        </button>
-      </div> */}
-
-      <div>
         <label htmlFor="filter">
           Sort by:
           <select
@@ -93,7 +112,9 @@ export default function App() {
             <option value="beststories">Best Stories</option>
           </select>
         </label>
-      </div>
+      </div> */}
     </div>
   );
 }
+
+export default App;
