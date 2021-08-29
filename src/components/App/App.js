@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Button from "../Button/Button";
+import WidthContainer from "../WidthContainer/WidthContainer";
 
 function App() {
   const [data, setData] = useState([]);
@@ -57,7 +58,12 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="App__navbar">
+        <WidthContainer>
+          <h1>Hacker News</h1>
+        </WidthContainer>
+      </div>
+      <WidthContainer>
         <Button
           active={filter === "topstories" ? true : false}
           onClick={() => handleFilterChange("topstories")}
@@ -76,14 +82,15 @@ function App() {
         >
           Best Stories
         </Button>
-      </div>
+      </WidthContainer>
 
-      {loading ? <div>Loading</div> : null}
-      {loading === false
-        ? data.map((post) => <div key={post.id}>{post.title}</div>)
-        : null}
-
-      <div>
+      <WidthContainer>
+        {loading ? <div>Loading</div> : null}
+        {loading === false
+          ? data.map((post) => <div key={post.id}>{post.title}</div>)
+          : null}
+      </WidthContainer>
+      <WidthContainer>
         <div>Page {currentPage} </div>
         <Button
           active
@@ -93,26 +100,11 @@ function App() {
         >
           Previous
         </Button>
+
         <Button large active onClick={handleNext}>
           Next
         </Button>
-      </div>
-
-      {/* <div>
-        <label htmlFor="filter">
-          Sort by:
-          <select
-            id="filter"
-            value={filter}
-            onChange={(e) => handleFilterChange(e.target.value)}
-            onBlur={(e) => handleFilterChange(e.target.value)}
-          >
-            <option value="topstories">Top Stories</option>
-            <option value="newstories">New Stories</option>
-            <option value="beststories">Best Stories</option>
-          </select>
-        </label>
-      </div> */}
+      </WidthContainer>
     </div>
   );
 }

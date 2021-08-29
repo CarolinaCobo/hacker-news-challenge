@@ -1,4 +1,9 @@
-.App {
-  background-color: #f8fafb;
-  min-height: 100vh;
+/* .App {
+
+} */
+
+.App__navbar {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 20px 0;
 }
