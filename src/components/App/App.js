@@ -8,6 +8,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("topstories");
+  const [resultsCount, setResultsCount] = useState(0);
 
   // Fetch API to get all the ID numbers of the top stories
   useEffect(() => {
@@ -16,6 +17,8 @@ function App() {
         `https://hacker-news.firebaseio.com/v0/${filter}.json?print=pretty`
       );
       const jsonData = await res.json();
+
+      setResultsCount(jsonData.length);
 
       const pageSize = 10;
       const endOfPageNum = currentPage * pageSize;
@@ -63,27 +66,30 @@ function App() {
           <h1>Hacker News</h1>
         </WidthContainer>
       </div>
-      <WidthContainer>
-        <Button
-          active={filter === "topstories" ? true : false}
-          onClick={() => handleFilterChange("topstories")}
-        >
-          Top Stories
-        </Button>
-        <Button
-          active={filter === "newstories" ? true : false}
-          onClick={() => handleFilterChange("newstories")}
-        >
-          New Stories
-        </Button>
-        <Button
-          active={filter === "beststories" ? true : false}
-          onClick={() => handleFilterChange("beststories")}
-        >
-          Best Stories
-        </Button>
-      </WidthContainer>
-
+      <div className="App__navbar-secondary">
+        <WidthContainer>
+          <div className="App__filter-buttons">
+            <Button
+              active={filter === "topstories" ? true : false}
+              onClick={() => handleFilterChange("topstories")}
+            >
+              Top Stories
+            </Button>
+            <Button
+              active={filter === "newstories" ? true : false}
+              onClick={() => handleFilterChange("newstories")}
+            >
+              New Stories
+            </Button>
+            <Button
+              active={filter === "beststories" ? true : false}
+              onClick={() => handleFilterChange("beststories")}
+            >
+              Best Stories
+            </Button>
+          </div>
+        </WidthContainer>
+      </div>
       <WidthContainer>
         {loading ? <div>Loading</div> : null}
         {loading === false
@@ -91,7 +97,9 @@ function App() {
           : null}
       </WidthContainer>
       <WidthContainer>
-        <div>Page {currentPage} </div>
+        <div>
+          Page {currentPage} of {Math.ceil(resultsCount / 10)}{" "}
+        </div>
         <Button
           active
           large
