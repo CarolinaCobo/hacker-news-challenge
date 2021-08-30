@@ -91,7 +91,6 @@ I considered to add the earch option, but doing some research on the Hacker News
 ## Libraries
 
 - [React](https://reactjs.org/) - to make an easier interactive UI.
-- [TailwindCSS](https://tailwindcss.com/docs/box-shadow) - For inspiration on accesibility.
 
 ## Programs and Tools
 
@@ -141,7 +140,7 @@ The test performed can be found at the [testing.md](testing.md) file.
 JEST
 npm install -D jest@26.6.3 @testing-library/react@11.2.5
 
-Create folder **tests**
+https://testing-library.com/
 
 ---
 
@@ -202,6 +201,21 @@ Update the package.json
 ```
 npm install -D @babel/core@7.12.16 @babel/preset-react@7.12.13
 
+```
+
+Create a file called .babelrc and add:
+
+```
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
 ```
 
 ### React

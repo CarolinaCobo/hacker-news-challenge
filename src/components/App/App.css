@@ -31,3 +31,9 @@
   justify-content: center;
   margin: 5px 0;
 }
+
+@media screen and (max-width: 500px) {
+  .App__filter-buttons {
+    flex-direction: column;
+  }
+}

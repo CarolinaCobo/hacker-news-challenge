@@ -108,7 +108,7 @@ function App() {
             disabled={currentPage === 1 ? true : false}
             onClick={handlePrev}
           >
-            Previous
+            Prev
           </Button>
 
           <Button large active onClick={handleNext}>
