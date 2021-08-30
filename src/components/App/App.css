@@ -6,6 +6,7 @@
   background-color: #ff6600;
   color: #fff;
   padding: 20px 0;
+  font-size: x-large;
 }
 
 .App__navbar-secondary {
@@ -16,4 +17,17 @@
 .App__filter-buttons {
   display: flex;
   gap: 12px;
+}
+
+.App__page-number {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.App__page-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 5px 0;
 }

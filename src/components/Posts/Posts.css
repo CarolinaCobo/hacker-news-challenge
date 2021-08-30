@@ -1,12 +1,13 @@
 .Posts {
   margin: 40px 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .Posts__card {
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   display: flex;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Posts__points {

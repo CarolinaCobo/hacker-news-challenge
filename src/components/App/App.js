@@ -95,22 +95,25 @@ function App() {
         {loading ? <div>Loading</div> : null}
         {loading === false ? <Posts postsData={data} /> : null}
       </WidthContainer>
+
       <WidthContainer>
-        <div>
+        <div className="App__page-number">
           Page {currentPage} of {Math.ceil(resultsCount / 10)}{" "}
         </div>
-        <Button
-          active
-          large
-          disabled={currentPage === 1 ? true : false}
-          onClick={handlePrev}
-        >
-          Previous
-        </Button>
+        <div className="App__page-buttons">
+          <Button
+            active
+            large
+            disabled={currentPage === 1 ? true : false}
+            onClick={handlePrev}
+          >
+            Previous
+          </Button>
 
-        <Button large active onClick={handleNext}>
-          Next
-        </Button>
+          <Button large active onClick={handleNext}>
+            Next
+          </Button>
+        </div>
       </WidthContainer>
     </div>
   );
