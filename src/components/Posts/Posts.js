@@ -2,12 +2,15 @@ import "./Posts.css";
 import LinkButton from "../LinkButton/LinkButton";
 
 function Posts({ postsData }) {
-  console.log(postsData);
   return (
     <div className="Posts">
       {postsData.map((post) => {
         return (
-          <div className="Posts__card" key={post.id}>
+          <div
+            data-testid="card-container"
+            className="Posts__card"
+            key={post.id}
+          >
             <div className="Posts__points">Points {post.score}</div>
             <h3 className="Posts__title">{post.title}</h3>
             <div className="Posts__button-container">

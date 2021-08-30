@@ -91,6 +91,7 @@ function App() {
           </div>
         </WidthContainer>
       </div>
+
       <WidthContainer>
         {loading ? <div>Loading</div> : null}
         {loading === false ? <Posts postsData={data} /> : null}

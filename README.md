@@ -1,16 +1,6 @@
-- npm init at the root of the project
-
-Gitignore file
-
-npm
-
-Prettier
-
-ESlint
-
 # Hacker News Challenge
 
-Create and improved version of (Hacker News)[https://news.ycombinator.com/] using the resources from their (API)[https://github.com/HackerNews/API]
+Build a cleaner, easier more accessible version of (Hacker News)[https://news.ycombinator.com/] using the resources from their (API)[https://github.com/HackerNews/API]
 
 ## Table of contents
 
@@ -63,6 +53,8 @@ For styling the page I followed the redesign made by (Alberto Costestabili)[http
 
 I picked this design as it follows the original site but with a much more friendlier UI.
 
+To style different elements I've (box shadow styling)[https://tailwindcss.com/docs/box-shadow]
+
 ### Colours
 
 The colors and style follow the original version from Hacker News.
@@ -113,12 +105,111 @@ I considered to add the earch option, but doing some research on the Hacker News
 - [Google Fonts](https://fonts.google.com) - used for fonts on the site.
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to test and optimize the site.
 
+## Structure
+
+### Components
+
+As some pieces of code were reused in different parts of the application I've created a folder that contains all the different components of the application:
+
+- App - as the application is a single page App component contains:
+
+  - Return statement with the information displayed in the app.
+  - Fetch data from the API.
+  - Buttons for Top, New and Best stories.
+  - Cards with the different stories.
+  - Number of current and total pages.
+  - Buttons for previous and next.
+
+- Button component: Styles and properties for the buttons.
+
+- LinkButton: as the "Read More" buttons in the cards are anchor tags I decided to create another component to style it as I couldn't reuse the Button component.
+
+- Posts: Style and get the cards containing the points and the tittle.
+
+- WidthContainer: to style all different elements on the page with the same width and also using it for the Navigation bar, as it's only an element I decided to reuse the component in other parts of the site.
+
+### CSS
+
+To avoid inconsistencies due to styles applied by the browser I've used (Reset CSS)[https://meyerweb.com/eric/tools/css/reset/]
+
+Across all the CSS files I've followed (BEM naming convention)[https://sparkbox.com/foundry/bem_by_example] for more consistency.
+
 <h1> 4. Testing </h1>
 
 The test performed can be found at the [testing.md](testing.md) file.
 
+JEST
+npm install -D jest@26.6.3 @testing-library/react@11.2.5
+
+Create folder **tests**
+
 ---
 
-<h1> 5. Deployment </h1>
+<h1> 5. How to run the project </h1>
 
-https://meyerweb.com/eric/tools/css/reset/ - Reset CSS in the app to avoid inconsistencies on the page.
+## JS Tools
+
+### npm
+
+At the root of your project
+
+```
+npm init
+```
+
+### Prettier
+
+Available only in development.
+
+```
+npm install -D prettier
+```
+
+Create the .prettierrc file.
+
+### ESLint
+
+```
+npm install -D eslint eslint-config-prettier
+```
+
+All the configuration can be found in the .eslintrc.json. file
+
+### Git
+
+```
+git init
+```
+
+Create the .gitinore file.
+
+### Parcel
+
+```
+npm install -D parcel@1.12.3.
+```
+
+Update the package.json
+
+```
+"scripts" {
+  "dev": "parcel src/index.html"
+}
+```
+
+### Babel
+
+```
+npm install -D @babel/core@7.12.16 @babel/preset-react@7.12.13
+
+```
+
+### React
+
+```
+npm install react@17.0.1 react-dom@17.0.1
+```
+
+IMPROVEMENTS
+
+commits > improve
