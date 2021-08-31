@@ -1,6 +1,8 @@
 # Hacker News Challenge
 
-Build a cleaner, easier more accessible version of [Hacker News](https://news.ycombinator.com/) using the resources from their [API](https://github.com/HackerNews/API)
+Build a cleaner, easier more accessible version of [Hacker News](https://news.ycombinator.com/) using the resources from their [API](https://github.com/HackerNews/API).
+
+Deployed site can be found [here](https://hacker-news-challenge.vercel.app/)
 
 ## Table of contents
 
@@ -37,6 +39,8 @@ Build a cleaner, easier more accessible version of [Hacker News](https://news.yc
 [Testing](#testing)
 
 [How to run the project](#how-to-run-the-project)
+
+[Deployment](#deployment)
 
 [Future improvements](#future-improvements)
 
@@ -248,12 +252,17 @@ To start the application
 run npm start
 ```
 
-Also I created the sytleMock.js file to give an empty array.,
+Also I created the sytleMock.js file to give an empty array.
+
+## Deployment
+
+To deploy the app I've used [Vercel](https://vercel.com/dashboard).
 
 ## Future improvements
 
 As I wanted to keep the challenge in the 8 hours mark I had to left some functionalities out.
 
+- In the future improvements I'd like to do a better error handling if there's any errors fetching the data from the API.
 - When the stories are linked to an internal link in Hacker News the "Read More" button is not working, so fixing this would be one of the first improvements I would make.
 - Add a preview when hovering over the "Read More" button.
 - Calculate the maximum number of pages so when the user gets to the final one it fades like previous does.
