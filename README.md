@@ -1,98 +1,101 @@
 # Hacker News Challenge
 
-Build a cleaner, easier more accessible version of (Hacker News)[https://news.ycombinator.com/] using the resources from their (API)[https://github.com/HackerNews/API]
+Build a cleaner, easier more accessible version of [Hacker News](https://news.ycombinator.com/) using the resources from their [API](https://github.com/HackerNews/API)
 
 ## Table of contents
 
-1.[UX](#ux)
+[User Experience](#user-experience)
 
 - [User Stories](#user-stories)
 - [Styling](#styling)
-
   - [Colours](#colours)
   - [Fonts](#fonts)
-  - [Favicon](#favicon)
 
-    2.[Features](#features)
+[Features](#features)
 
-- [Site features](#site-features)
+- [Implemented](#implemented)
 
-  - [Responsive Frontend design](#responsive-frontend-design)
-
-- [Future features](#future-features)
-
-  3.[Technologies used](#technologies-used)
+[Technologies used](#technologies-used)
 
 - [Languages](#languages)
 - [Libraries](#libraries)
 - [Programs and tools](#programs-and-tools)
+- [JS Tools Installed](#js-tools-installed)
 
-  4.[Testing](#testing)
+  - [npm](#npm)
+  - [Prettier](#pretier)
+  - [ESLint](#eslint)
+  - [Git](#git)
+  - [Parcel](#parcel)
+  - [Babel](#babel)
+  - [React](#react)
 
-  5.[Deployment](#deployment)
+- [Structure](#structure)
+  - [Components](#components)
+  - [Css](#css)
 
-- [Cloning](#cloning)
+[Testing](#testing)
 
-  6.[Credits](#credits)
+[How to run the project](#how-to-run-the-project)
 
-- [Content](#content)
+[Future improvements](#future-improvements)
 
-  7.[Acknowledgements](#acknowledgements)
+---
 
-<h1> 1. User Experience </h1>
+## User Experience
 
-## **User stories**
+### User stories
 
 - As a user I would like to be able to find information easier.
 - As a user I would like to have an easier experience.
 - As a user I would like to be able to filter by top, new and best stories.
 
-## **Styling**
+### Styling
 
-For styling the page I followed the redesign made by (Alberto Costestabili)[https://dribbble.com/shots/3219317-Hacker-News-Redesign] with some changes.
+For styling the page I got inspiration from the redesign made by [Alberto Costestabili](https://dribbble.com/shots/3219317-Hacker-News-Redesign) in Dribbble.
 
-I picked this design as it follows the original site but with a much more friendlier UI.
+The style I was looking for the design was sompething simple, easy to use and interactive.
 
-To style different elements I've (box shadow styling)[https://tailwindcss.com/docs/box-shadow]
+To make it more user friendly I've used bigger buttons and used flexbox with the elements so all of the stack on the same way and move from row to column when the user is using a smaller device.
 
-### Colours
+Also, I wanted to depending on in which section the user is the buttons would be orange following the color pattern.
+
+To style different elements I've used the properties in [Tailwind box shadow styling](https://tailwindcss.com/docs/box-shadow)
+
+#### **Colours**
 
 The colors and style follow the original version from Hacker News.
 
-- ![#FF6600](https://via.placeholder.com/15/FF6600/000000?text=+) `#FF6600` - Navbar, selected buttons, points and comments numbers.
-- ![#F6F6EF](https://via.placeholder.com/15/F6F6EF/000000?text=+) `#F6F6EF` - Sorting by navbar.
-- ![#D6D5D6](https://via.placeholder.com/15/D6D5D6/000000?text=+) `#D6D5D6` - Buttons.
+![#FF6600](https://via.placeholder.com/15/FF6600/000000?text=+) `#FF6600` - Navbar, selected buttons, points and comments numbers.
 
-### Fonts
+For the background color of the sorting navbar and the buttons I've used: _rgba(0, 0, 0, 0.08)_
+
+#### **Fonts**
 
 Verdana as it's the font used in the Hacker News page.
 
-<h1> 2. Features </h1>
+## Features
 
-## Implemented
+### Implemented
 
 - Pagination.
 - Sorting by top, new and best stories.
 - Responsive design.
 - Accesibility.
 
-# Not implemented
+## Technologies Used
 
-I considered to add the earch option, but doing some research on the Hacker News API docs and the site I discovered they use a search engine calle "Algolia". As I didn't want to do so many calls to the API and the the time available I decided to implement the features listed above.
-
-<h1> 3. Technologies Used </h1>
-
-## Languages
+### Languages
 
 - [HTML5](https://www.w3schools.com/html/) - to build the structure of this site.
 - [CSS3](https://www.w3schools.com/css/) - to style the page, and fix media queries and the max width.
 - [JavaScript](https://www.javascript.com/) - to add interactions with the page.
 
-## Libraries
+### Libraries
 
 - [React](https://reactjs.org/) - to make an easier interactive UI.
 
-## Programs and Tools
+### Programs and Tools
 
 - [VSCode](https://code.visualstudio.com/) - used as IDE for the project.
 - [Git](https://git-scm.com/) - used for version control.
@@ -104,9 +107,87 @@ I considered to add the earch option, but doing some research on the Hacker News
 - [Google Fonts](https://fonts.google.com) - used for fonts on the site.
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) - used to test and optimize the site.
 
+### JS Tools Installed
+
+#### **npm**
+
+At the root of your project
+
+```
+npm init
+```
+
+#### **Prettier**
+
+Available only in development.
+
+```
+npm install -D prettier
+```
+
+Create the .prettierrc file.
+
+#### **ESLint**
+
+```
+npm install -D eslint eslint-config-prettier
+```
+
+All the configuration can be found in the .eslintrc.json. file
+
+#### **Git**
+
+```
+git init
+```
+
+Create the .gitinore file.
+
+#### **Parcel**
+
+```
+npm install -D parcel@1.12.3.
+```
+
+Update the package.json
+
+```
+"scripts" {
+  "dev": "parcel src/index.html"
+}
+```
+
+#### **Babel**
+
+```
+npm install -D @babel/core@7.12.16 @babel/preset-react@7.12.13
+
+```
+
+Create a file called .babelrc and add:
+
+```
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
+```
+
+#### **React**
+
+```
+npm install react@17.0.1 react-dom@17.0.1
+```
+
 ## Structure
 
-### Components
+### Components
 
 As some pieces of code were reused in different parts of the application I've created a folder that contains all the different components of the application:
 
@@ -133,97 +214,48 @@ To avoid inconsistencies due to styles applied by the browser I've used (Reset C
 
 Across all the CSS files I've followed (BEM naming convention)[https://sparkbox.com/foundry/bem_by_example] for more consistency.
 
-<h1> 4. Testing </h1>
+## Testing
 
-The test performed can be found at the [testing.md](testing.md) file.
+For# testing I've used [Jest](https://testing-library.com/), to install it:
 
-JEST
+```
 npm install -D jest@26.6.3 @testing-library/react@11.2.5
-
-https://testing-library.com/
-
----
-
-<h1> 5. How to run the project </h1>
-
-## JS Tools
-
-### npm
-
-At the root of your project
-
-```
-npm init
 ```
 
-### Prettier
+The testing files can be found on the folders of the components that are being tested:
 
-Available only in development.
+- App
+- Button
+- Posts
 
-```
-npm install -D prettier
-```
-
-Create the .prettierrc file.
-
-### ESLint
+To run the entire test suite run:
 
 ```
-npm install -D eslint eslint-config-prettier
+npm run test
 ```
 
-All the configuration can be found in the .eslintrc.json. file
+## How to run the project
 
-### Git
-
-```
-git init
-```
-
-Create the .gitinore file.
-
-### Parcel
+To initialise the dependencies run
 
 ```
-npm install -D parcel@1.12.3.
+npm install
 ```
 
-Update the package.json
+To start the application
 
 ```
-"scripts" {
-  "dev": "parcel src/index.html"
-}
+run npm start
 ```
 
-### Babel
+Also I created the sytleMock.js file to give an empty array.,
 
-```
-npm install -D @babel/core@7.12.16 @babel/preset-react@7.12.13
+## Future improvements
 
-```
+As I wanted to keep the challenge in the 8 hours mark I had to left some functionalities out.
 
-Create a file called .babelrc and add:
-
-```
-{
-  "presets": [
-    [
-      "@babel/preset-react",
-      {
-        "runtime": "automatic"
-      }
-    ]
-  ]
-}
-```
-
-### React
-
-```
-npm install react@17.0.1 react-dom@17.0.1
-```
-
-IMPROVEMENTS
-
-commits > improve
+- When the stories are linked to an internal link in Hacker News the "Read More" button is not working, so fixing this would be one of the first improvements I would make.
+- Add a preview when hovering over the "Read More" button.
+- Calculate the maximum number of pages so when the user gets to the final one it fades like previous does.
+- As this is my first time doing testing, I didn't have the scope to add more test cases.
+- Adding a Search option, after doing some research on the Hacker News API docs and the site I discovered they use a search engine calle "Algolia". As I didn't want to do so many calls to the API and the the time available didn't allow me to do more research I would do it in the future.
