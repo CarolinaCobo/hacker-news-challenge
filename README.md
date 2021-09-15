@@ -198,7 +198,7 @@ As some pieces of code were reused in different parts of the application I've cr
 - App - as the application is a single page App component contains:
 
   - Return statement with the information displayed in the app.
-  - Fetch data from the API.
+  - Fetch  from the API.
   - Buttons for Top, New and Best stories.
   - Cards with the different stories.
   - Number of current and total pages.
@@ -214,16 +214,16 @@ As some pieces of code were reused in different parts of the application I've cr
 
 ### CSS
 
-To avoid inconsistencies due to styles applied by the browser I've used (Reset CSS)[https://meyerweb.com/eric/tools/css/reset/]
+To avoid inconsistencies due to styles applied by the browser I've used [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 
-Across all the CSS files I've followed (BEM naming convention)[https://sparkbox.com/foundry/bem_by_example] for more consistency.
+Across all the CSS files I've followed [BEM naming convention](https://sparkbox.com/foundry/bem_by_example) for more consistency.
 
 ## Testing
 
-For# testing I've used [Jest](https://testing-library.com/), to install it:
+For# testing I've used [Jest](https://testing-.com/), to install it:
 
 ```
-npm install -D jest@26.6.3 @testing-library/react@11.2.5
+npm install -D jest@26.6.3 @testing-/@11.2.5
 ```
 
 The testing files can be found on the folders of the components that are being tested:
@@ -262,7 +262,7 @@ To deploy the app I've used [Vercel](https://vercel.com/dashboard).
 
 As I wanted to keep the challenge in the 8 hours mark I had to left some functionalities out.
 
-- In the future improvements I'd like to do a better error handling if there's any errors fetching the data from the API.
+- In the future improvements I'd like to do a better error handling if there's any errors fetching the  from the API.
 - When the stories are linked to an internal link in Hacker News the "Read More" button is not working, so fixing this would be one of the first improvements I would make.
 - Add a preview when hovering over the "Read More" button.
 - Calculate the maximum number of pages so when the user gets to the final one it fades like previous does.
